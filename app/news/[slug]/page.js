@@ -3,6 +3,11 @@ import { DUMMY_NEWS } from "@/dummy-news";
 const DetailedPage = ({ params }) => {
   const newsSlug = params?.slug;
   const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === newsSlug);
+
+  if (!newsItem) {
+    return <h2>News Not Found</h2>;
+  }
+
   return (
     <article className="news-article">
       <header>
