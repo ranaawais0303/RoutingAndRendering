@@ -27,7 +27,7 @@ const FilteredNewsPage = ({ params }) => {
     links = [];
   }
 
-  let newsContent = <p>no news found for the selected perios. </p>;
+  let newsContent = <p>no news found for the selected period. </p>;
 
   if (news && news.length > 0) {
     newsContent = <NewsLists newsItems={news} />;
@@ -50,7 +50,6 @@ const FilteredNewsPage = ({ params }) => {
               const href = selectedYear
                 ? `/archive/${selectedYear}/${link}`
                 : `/archive/${link}`;
-              console.log(href, "links here is the href");
               return (
                 <li key={link}>
                   <Link href={href}>{link}</Link>
