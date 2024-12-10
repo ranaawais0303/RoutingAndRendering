@@ -33,7 +33,14 @@ const FilteredNewsPage = ({ params }) => {
     newsContent = <NewsLists newsItems={news} />;
   }
 
-  //   const newsItem = getNewsForYear(newsYear);
+  if (
+    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
+    (selectedMonth &&
+      !getAvailableNewsMonths(selectedYear).includes(+selectedMonth))
+  ) {
+    throw new Error("Invalid filter");
+  }
+
   return (
     <>
       <header id="archive-header">
@@ -41,8 +48,8 @@ const FilteredNewsPage = ({ params }) => {
           <ul>
             {links.map((link) => {
               const href = selectedYear
-                ? `archive/${selectedYear}/${link}`
-                : `archive/${link}`;
+                ? `/archive/${selectedYear}/${link}`
+                : `/archive/${link}`;
               console.log(href, "links here is the href");
               return (
                 <li key={link}>
