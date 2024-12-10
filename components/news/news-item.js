@@ -1,15 +1,12 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
-const NewsItem = ({ id, title, slug, image, content }) => {
+const NewsItem = ({ newsItems }) => {
   return (
     <div>
-      {/* <h2>{title}</h2> */}
-      {/* <Image src={image} alt={title} /> */}
-      {/* <p>{content}</p> */}
-      <Link href={`news/${slug}`}>
-        <img src={`/images/news/${image}`} alt={title} />
-        <span>{title}</span>
+      <Link href={`/news/${newsItems.slug}`}>
+        <img src={`/images/news/${newsItems.image}`} alt={newsItems.title} />
+        <span>{newsItems.title}</span>
       </Link>
     </div>
   );

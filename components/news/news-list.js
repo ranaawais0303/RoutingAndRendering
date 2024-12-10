@@ -1,13 +1,14 @@
 import { DUMMY_NEWS } from "@/dummy-news";
 import NewsItem from "./news-item";
+import Link from "next/link";
 
-const NewsLists = () => {
-  const newsItems = DUMMY_NEWS;
+const NewsLists = ({ newsItems }) => {
+  console.log(newsItems, "here is the news itemss");
   return (
     <ul className="news-list">
-      {newsItems.map((newz) => (
-        <li key={newz.id}>
-          <NewsItem {...newz} />
+      {newsItems.map((news) => (
+        <li key={news.id}>
+          <NewsItem newsItems={news} />
         </li>
       ))}
     </ul>
