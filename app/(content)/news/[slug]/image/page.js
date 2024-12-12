@@ -1,9 +1,11 @@
-const { DUMMY_NEWS } = require("@/dummy-news");
+import { getNewsItem } from "@/lib/news";
+
 const { notFound } = require("next/navigation");
 
-const ImagePage = ({ params }) => {
+const ImagePage = async ({ params }) => {
   const newsSlug = params?.slug;
-  const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === newsSlug);
+  const news = await getNewsItem(newsSlug);
+  const newsItem = news[0];
 
   if (!newsItem) {
     console.log(newsItem, "page not found here");
