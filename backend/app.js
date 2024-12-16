@@ -104,8 +104,6 @@ async function insertData() {
         .input("image", sql.NVarChar, news.image)
         .query(insertQuery);
     }
-
-    console.log("Dummy data inserted successfully.");
   } catch (error) {
     console.error("Error inserting data:", error);
   } finally {

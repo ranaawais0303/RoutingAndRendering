@@ -6,8 +6,6 @@ const DetailedPage = async ({ params }) => {
   const news = await getNewsItem(newsSlug);
   const newsItem = news[0];
 
-  console.log(newsItem.slug, newsItem.image, "here are the new news items");
-
   if (!newsItem) {
     notFound();
   }

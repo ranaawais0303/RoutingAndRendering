@@ -8,7 +8,6 @@ const ImagePage = async ({ params }) => {
   const newsItem = news[0];
 
   if (!newsItem) {
-    console.log(newsItem, "page not found here");
     notFound();
   }
   return (

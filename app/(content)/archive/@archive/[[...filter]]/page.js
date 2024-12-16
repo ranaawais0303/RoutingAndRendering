@@ -39,8 +39,6 @@ const FilteredNewsPage = async ({ params }) => {
   let newsContent = <p>no news found for the selected period. </p>;
 
   if (news && news.length > 0) {
-    console.log(selectedYear, news, "here is the news");
-
     newsContent = <NewsLists newsItems={news} />;
   }
 
